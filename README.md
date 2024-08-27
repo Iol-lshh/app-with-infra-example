@@ -27,3 +27,5 @@
   3. 이때, 쿠폰 발행 요청을 받은 컨슈머는 쿠폰 발행 요청을 처리하고, 
   4. 쿠폰 발행 결과를 다시 Kafka에 보내어, 
   5. 쿠폰 발행 결과를 받은 컨슈머는 쿠폰 발행 결과를 데이터베이스에 저장합니다.
+- 에러 핸들링
+  - https://www.confluent.io/blog/error-handling-patterns-in-kafka/
