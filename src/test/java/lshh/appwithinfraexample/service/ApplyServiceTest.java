@@ -26,10 +26,10 @@ public class ApplyServiceTest {
     @Test
     public void 쿠폰_여러명_응모() throws InterruptedException {
         couponCounter.resetCouponCount();
-        int threadCount = 100;
+        int transactionCount = 1000;
         ExecutorService executorService = Executors.newFixedThreadPool(32);
-        CountDownLatch latch = new CountDownLatch(threadCount);
-        for (int i = 0; i < threadCount; i++) {
+        CountDownLatch latch = new CountDownLatch(transactionCount);
+        for (int i = 0; i < transactionCount; i++) {
             long userId = i;
             executorService.submit(() -> {
                 try{
