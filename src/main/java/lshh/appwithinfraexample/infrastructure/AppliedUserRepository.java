@@ -14,4 +14,8 @@ public class AppliedUserRepository {
                 .opsForSet()
                 .add("applied_user", userId);
     }
+
+    public void resetAppliedUser(){
+        redisTemplate.delete("applied_user");
+    }
 }

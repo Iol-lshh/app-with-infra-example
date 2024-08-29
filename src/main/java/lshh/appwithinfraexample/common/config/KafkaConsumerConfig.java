@@ -17,6 +17,7 @@ public class KafkaConsumerConfig {
     public ConsumerFactory<String, Long> consumerFactory() {
         Map<String, Object> config = Map.of(
                 ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092",
+                ConsumerConfig.GROUP_ID_CONFIG, "coupon-consumer",
                 ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class,
                 ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, LongDeserializer.class
         );

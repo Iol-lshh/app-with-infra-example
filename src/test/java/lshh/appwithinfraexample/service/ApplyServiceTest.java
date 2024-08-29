@@ -1,5 +1,6 @@
 package lshh.appwithinfraexample.service;
 
+import lshh.appwithinfraexample.infrastructure.AppliedUserRepository;
 import lshh.appwithinfraexample.infrastructure.CouponCounter;
 import lshh.appwithinfraexample.infrastructure.CouponRepository;
 import org.junit.jupiter.api.Test;
@@ -22,10 +23,14 @@ public class ApplyServiceTest {
     private CouponRepository couponRepository;
     @Autowired
     private CouponCounter couponCounter;
+    @Autowired
+    private AppliedUserRepository appliedUserRepository;
 
     @Test
     public void 쿠폰_여러명_응모() throws InterruptedException {
         couponCounter.resetCouponCount();
+        appliedUserRepository.resetAppliedUser();
+
         int transactionCount = 1000;
         ExecutorService executorService = Executors.newFixedThreadPool(32);
         CountDownLatch latch = new CountDownLatch(transactionCount);
